@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.springframework.idusmartii</groupId>
+    <artifactId>G6-4c</artifactId>
+    <version>2.2.0.BUILD-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.4.RELEASE</version>
+    </parent>
+    <name>G6-4</name>
+
+    <properties>
+
+        <!-- Generic properties -->
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Web dependencies -->
+        <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
+        <webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
+        <webjars-jquery.version>2.2.4</webjars-jquery.version>
+        <wro4j.version>1.8.0</wro4j.version>
+
+        <jacoco.version>0.8.5</jacoco.version>
+        <spring-format.version>0.0.19</spring-format.version>
+
+    </properties>
+	<developers>
+    	<developer>
+      	<id>cargarrod12</id>
+      	<name>Carlos</name>
+      	<email>cargarrod12@alum.us.es</email>
+      	<url>http://www.tmht.com/leo</url>
+      	<roles>
+        	<role>leader</role>
+      	</roles>
+	      <properties>
+	        <picUrl>
+			data:image/jpeg;base64,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
+			</picUrl>
+	      </properties>
+	    </developer>
+
+	    <developer>
+	      	<id>juagomram4</id>
+	      	<name>Juan Carlos</name>
+	      	<email>juagomram4@alum.us.es</email>
+	      	<roles>
+	      		<role>leader</role>
+	        </roles>
+	      	<timezone>America/New_York</timezone>
+	      	<properties>
+	        	<picUrl> </picUrl>
+	      	</properties>
+	    </developer>
+
+
+
+	   	 <developer>
+		 <id>Angel36570123</id>
+		 <name>Angel</name>
+		 <email>angelorenzo63@gmail.com</email>
+		 <url>http://www.tmht.com/leo</url>
+		 <roles>
+		 <role>notleader</role>
+		 </roles>
+		 <properties>
+		 <picUrl>
+		            https://i.blogs.es/d3c49b/mango/840_560.jpg
+		</picUrl>
+		 </properties>
+		 </developer>
+
+		 <developer>
+		 <id>marpercor</id>
+		 <name>Mario</name>
+		 <email>marpercor@alum.us.es</email>
+		 <url></url>
+		 <roles>
+		 <role>leader</role>
+		 </roles>
+		 <properties>
+		 <picUrl>
+		</picUrl>
+		 </properties>
+		 </developer>
+
+	</developers>
+
+    <dependencies>
+        <!-- Spring and Spring Boot dependencies -->
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!-- Databases - Uses H2 by default -->
+        <!-- dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <scope>runtime</scope>
+        </dependency-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- validation
+        <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+        </dependency>-->
+        <!-- caching -->
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
+        <!-- Java Servlets, JSP and JSTL -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- WebJars -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${webjars-jquery.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-ui</artifactId>
+            <version>${webjars-jquery-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${webjars-bootstrap.version}</version>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <artifactId>junit</artifactId>
+            <groupId>junit</groupId>
+        </dependency>
+        <!-- Development tools -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+        	    <plugin>
+			      <groupId>org.jacoco</groupId>
+			      <artifactId>jacoco-maven-plugin</artifactId>
+			      <version>0.8.8-SNAPSHOT</version>
+			    </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties
+                        file is present -->
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                        <configuration>
+                            <additionalProperties>
+                                <encoding.source>${project.build.sourceEncoding}</encoding.source>
+                                <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                                <java.source>${maven.compiler.source}</java.source>
+                                <java.target>${maven.compiler.target}</java.target>
+                            </additionalProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Spring Boot Actuator displays build-related information if a git.properties
+            file is present at the classpath -->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
+                    </generateGitPropertiesFilename>
+                    <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>${wro4j.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
+                    <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
+                    <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
+                    <contextFolder>${basedir}/src/main/less</contextFolder>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.webjars</groupId>
+                        <artifactId>bootstrap</artifactId>
+                        <version>${webjars-bootstrap.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mockito</groupId>
+                        <artifactId>mockito-core</artifactId>
+                        <version>${mockito.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Apache 2 license -->
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+
+
+</project>
