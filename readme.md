@@ -8,6 +8,7 @@ Idus Martii es una aplicación desarrollada por 5 estudiantes de ingeniería del
 		    <p>-Carlos Garrido Rodriguez</p>
 		    <p>-Ángel Lorenzo Casas</p>
 	    </ul>
+Consiste en una aplicación web, en la cual los usuarios pueden crearse cuenta usuarios, para así poder acceder al menú del sistema, donde se pueden crear, unirse o eliminar mesas de juegos, en las cuales puedes invitar a tus amigos para jugar juntos, o, simplemente, jugar con otras personas. Conforme se vayan jugando partidas, irás alcanzado logros y medallas las cuales puedes ir coleccionando. La aplicación también cuenta con un módulo de amistad para poder añadir a aquellos jugadores a tu lista de amigos.
 	    <h2>Desarrollado</h2>
 	    Desarrollado con Spring
             <h2> Como jugar </h2>
